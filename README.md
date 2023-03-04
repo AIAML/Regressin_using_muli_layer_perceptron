@@ -100,7 +100,7 @@ plt.show()
 
  
  </code>
- <img src='' />
+ <img src='https://github.com/AIAML/Regression_using_multi_layer_perceptron/blob/master/myplot.png' />
  
  
  
