@@ -2,15 +2,13 @@
  
  <p> In order to estimate a value using Tensowrflow by Python you need to import the following Packages. </p>
  <code>
- 
  from sklearn.datasets import fetch_california_housing
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-import tensorflow as tf
-from tensorflow import keras
-import pandas as pd
-import matplotlib.pyplot as plt
-
+ from sklearn.model_selection import train_test_split
+ from sklearn.preprocessing import StandardScaler
+ import tensorflow as tf
+ from tensorflow import keras
+ import pandas as pd
+ import matplotlib.pyplot as plt
  </code>
  
  <H3> Dataset </H3>
@@ -29,14 +27,15 @@ import matplotlib.pyplot as plt
      <li>building price</li>
      <li>Close to the ocean</li>
  <ul>
-<code> fashion_mnist = keras.datasets.fashion_mnist
-(x_train_full, y_train_full), (x_test, y_test) = fashion_mnist.load_data()
+  
+<code> housing = fetch_california_housing()
 </code>
-<p> Our Train dataset contains 60000 samples so as for to prevent overlearning we have set 10000 for validation set. The following code used for this purpose. </p>
+<p> Then we need to organise our train,validation and test set. Here in the following we have prepared it: </p>
 
+  
 <code>
-  x_valid, x_train = x_train_full[50000:] / 255.0, x_train_full[:50000] / 255.0
-  y_valid, y_train = y_train_full[50000:], y_train_full[:50000]
+  x_train_full, x_test, y_train_full, y_test = train_test_split(housing.data, housing.target)
+  x_train, x_valid, y_train, y_valid = train_test_split(x_train_full, y_train_full)
  </code>
  
  <p> Next We have to build our model. In this sample we have applied Sequential model of neural network.  </p>
