@@ -2,17 +2,33 @@
  
  <p> In order to estimate a value using Tensowrflow by Python you need to import the following Packages. </p>
  <code>
-  import tensorflow as tf
- from tensorflow import keras
- import pandas as pd
- import matplotlib.pyplot as plt
+ 
+ from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+import tensorflow as tf
+from tensorflow import keras
+import pandas as pd
+import matplotlib.pyplot as plt
+
  </code>
  
  <H3> Dataset </H3>
  
- <p> After that we must include our dataset. In this project we have used Fashion MNIST dataset where you can see details in <a href='https://keras.io/api/datasets/fashion_mnist/'> this link </a> </p>
+ <p> After that we must include our dataset. In this project we have used California Housing Prices dataset containing these features :  </p>
  
- <img src='https://raw.githubusercontent.com/AIAML/Multi_Layer_perceptron_using_Tensorflow/master/fashion-mnist-sprite.png' style='width:800px' /> 
+ <ul>
+  <li>Longitude</li>
+     <li>latitude</li>
+     <li>The age of the building</li>
+     <li>number of rooms</li>
+     <li>Number of bedrooms</li>
+     <li>Mitigation of pollution in the area</li>
+     <li>The owner of the houses</li>
+     <li>Income</li>
+     <li>building price</li>
+     <li>Close to the ocean</li>
+ <ul>
 <code> fashion_mnist = keras.datasets.fashion_mnist
 (x_train_full, y_train_full), (x_test, y_test) = fashion_mnist.load_data()
 </code>
