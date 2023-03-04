@@ -63,29 +63,28 @@ keras.layers.Dense(1)
   model.add(keras.layers.Flatten(input_shape=[28, 28]))
 </code>
  
- <p> For selecting your model you have to consider this issue that it takes a while to be proficient in selecting your proper model. In this problem we need to classify images so we have two hidden layer which use 'relu' function. Finally for the last layer we have used softmax function with 10 point which indicates our classes.  </p>
+ <p> For selecting your model you have to consider this issue that it takes a while to be proficient in selecting your proper model.</p>
  
- <code>
-  model = keras.models.Sequential()
-  model.add(keras.layers.Flatten(input_shape=[28, 28]))
-  model.add(keras.layers.Dense(300, activation="relu"))
-  model.add(keras.layers.Dense(100, activation="relu"))
-  model.add(keras.layers.Dense(10, activation="softmax"))
- </code>
+<code>
+ model = keras.models.Sequential([
+ keras.layers.Dense(30, activation="relu", input_shape=x_train.shape[1:]),
+ keras.layers.Dense(1)
+ ])
+</code>
  
  <p>
  In addtion, before fitting you can view a summery of your model.
  </p>
  <code>
-  model.summary()
+  model.compile(loss="mean_squared_error", optimizer="sgd")
  </code>
  <h3> Fit and Evaluate </h3>
  <p>
  The last step is compiling and fiting our model. Pure and Simple
  </p>
  <code>
-  model.compile(loss="sparse_categorical_crossentropy", optimizer="sgd", metrics=["accuracy"])
-   history = model.fit(x_train, y_train, epochs=30, validation_data=(x_valid, y_valid))
+   model.compile(loss="sparse_categorical_crossentropy", optimizer="sgd", metrics=["accuracy"])
+   history = model.fit(x_train, y_train, epochs=20, validation_data=(x_valid, y_valid))
  </code>
 
 <p> 
@@ -95,13 +94,13 @@ keras.layers.Dense(1)
  <code>
  
  pd.DataFrame(history.history).plot(figsize=(8, 5))
- plt.grid(True)
- plt.gca().set_ylim(0, 1)  # set the vertical range to [0-1]
- plt.show()
+plt.grid(True)
+plt.gca().set_ylim(0, 1) # set the vertical range to [0-1]
+plt.show()
 
  
  </code>
- <img src='https://raw.githubusercontent.com/AIAML/Multi_Layer_perceptron_using_Tensorflow/master/myplot.png' />
+ <img src='' />
  
  
  
