@@ -38,12 +38,24 @@
   x_train, x_valid, y_train, y_valid = train_test_split(x_train_full, y_train_full)
  </code>
  
- <p> Next We have to build our model. In this sample we have applied Sequential model of neural network.  </p>
+ <p> If we print our data,we would know that they are not normal so we used codes below for standardisation of our data.  </p>
  
+  
  <code> 
+  scaler = StandardScaler()
+  x_train = scaler.fit_transform(x_train)
+  x_valid = scaler.transform(x_valid)
+  x_test = scaler.transform(x_test) 
+ </code>
+  
  <h3> Model </h3>
- 
-model = keras.models.Sequential()
+  <p> For Training we need a model. With keral we have used sequentional mode for our aim. </p>
+  
+<code>
+ model = keras.models.Sequential([
+keras.layers.Dense(30, activation="relu", input_shape=x_train.shape[1:]),
+keras.layers.Dense(1)
+])
 </code>
 <p> The next step is building our layers. The first layer is formed based on our input. Our Input data is an image which has 28*28 dimenstion. As a consequence our code in python would be:  </p>
 
