@@ -30,7 +30,7 @@
   
 <code> housing = fetch_california_housing()
 </code>
-<p> Then we need to organise our train,validation and test set. Here in the following we have prepared it: </p>
+<p> Then we need to organise our train,validation and test sets. Here in the following we have prepared it: </p>
 
   
 <code>
@@ -98,8 +98,5 @@ keras.layers.Dense(1)
   plt.show()
 </code>
  <img src='https://github.com/AIAML/Regression_using_multi_layer_perceptron/blob/master/myplot.png' />
- 
- 
- 
  
  
