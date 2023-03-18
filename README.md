@@ -11,6 +11,8 @@
  import matplotlib.pyplot as plt
  </code>
  
+ 
+ 
  <H3> Dataset </H3>
  
  <p> After that we must include our dataset. In this project we have used California Housing Prices dataset containing these features :  </p>
