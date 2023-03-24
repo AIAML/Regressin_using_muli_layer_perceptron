@@ -1,5 +1,6 @@
  <h2> Regression With Multi Layer Perceptron and Tensorflow</h2>
  
+ 
  <p> In order to estimate a value using Tensowrflow by Python you need to import the following Packages. </p>
  <code>
  from sklearn.datasets import fetch_california_housing
@@ -40,6 +41,7 @@
  </code>
  
  <p> If we print our data,we would know that they are not normal so we used codes below for standardisation of our data.  </p>
+ 
  
   
  <code> 
