@@ -10,6 +10,7 @@ housing = fetch_california_housing()
 x_train_full, x_test, y_train_full, y_test = train_test_split(housing.data, housing.target)
 x_train, x_valid, y_train, y_valid = train_test_split(x_train_full, y_train_full)
 
+
 scaler = StandardScaler()
 x_train = scaler.fit_transform(x_train)
 x_valid = scaler.transform(x_valid)
@@ -17,8 +18,7 @@ x_test = scaler.transform(x_test)
 
 model = keras.models.Sequential([
 keras.layers.Dense(30, activation="relu", input_shape=x_train.shape[1:]),
-keras.layers.Dense(1)
-])
+keras.layers.Dense(1)])
 
 model.compile(loss="mean_squared_error", optimizer="sgd")
 
