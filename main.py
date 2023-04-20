@@ -6,6 +6,7 @@ from tensorflow import keras
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 housing = fetch_california_housing()
 x_train_full, x_test, y_train_full, y_test = train_test_split(housing.data, housing.target)
 x_train, x_valid, y_train, y_valid = train_test_split(x_train_full, y_train_full)
